@@ -13,6 +13,7 @@ class ListaCursos
     int tam = 0;
 public:
     Curso* primer = nullptr;
+
     size_t Longitud();
     void Agregar(std::string nombre);
     void Print();
@@ -42,7 +43,6 @@ public:
     std::string codigo; //atributos instancia
     int ciclo; //atributos instancia
     float ppa; //atributos instancia
-    static int cantidadInstancias; // Atributo CLASE
     Curso curso;
 
     Alumno(); // Metodo constructor
@@ -59,4 +59,3 @@ public:
 
     void Print(); // Metodo instancia
 };
-int Alumno::cantidadInstancias = 0;
