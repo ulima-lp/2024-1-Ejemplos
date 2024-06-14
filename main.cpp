@@ -54,6 +54,7 @@ public:
             << "ciclo=" << ciclo << " "
             << "ppa=" << ppa << ">" << std::endl;
         curso.Print();
+        std::cout << std::endl;
         std::cout << "<Alumno />"
             << std::endl;
     }
@@ -70,6 +71,10 @@ int main()
         6, 
         13.4f
     ); // Objeto creado en stack
+
+    Curso curso1;
+    curso1.nombre = "LP";
+    a1.curso = curso1;
     a1.Print();
 
     Alumno* a2 = new Alumno(
@@ -78,7 +83,9 @@ int main()
         6, 
         14.8f
     ); // Objeto creado en heap
+    a2->curso = curso1;
     a2->Print();
+    
 
     std::cout << Alumno::cantidadInstancias << std::endl;
 
