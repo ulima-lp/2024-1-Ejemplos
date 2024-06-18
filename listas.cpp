@@ -42,6 +42,30 @@ void ListaCursos::Agregar(std::string nombre)
     tam++;
 }
 
+void ListaCursos::Agregar(Curso* curso)
+{
+    curso->siguiente = nullptr; // asegurarse
+
+    if (primer == nullptr)
+    {
+        // Lista vacia
+        primer = curso;
+    }
+    else
+    {
+        Curso* pPivot = primer;
+
+        // pPivot se queda apuntando al ultimo
+        while(pPivot->siguiente != nullptr)
+        {
+            pPivot = pPivot->siguiente;
+        }
+
+        pPivot->siguiente = curso;
+    }
+    tam++;
+}
+
 void ListaCursos::Eliminar(size_t pos)
 {
     if (tam == 0 || pos >= tam)

@@ -16,6 +16,7 @@ public:
 
     size_t Longitud();
     void Agregar(std::string nombre);
+    void Agregar(Curso* curso); // Sobrecarga del metodo agregar
     void Eliminar(size_t pos);
     Curso* Obtener(size_t pos);
     void Print();

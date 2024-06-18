@@ -11,7 +11,7 @@ int main()
     Curso* curso = cursos.Obtener(2);
     curso->Print();
 
-    cursos.Eliminar(2);
+    cursos.Eliminar(0);
 
     cursos.Print();
 
