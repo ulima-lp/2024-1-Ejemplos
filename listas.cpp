@@ -44,12 +44,53 @@ void ListaCursos::Agregar(std::string nombre)
 
 void ListaCursos::Eliminar(size_t pos)
 {
+    if (tam == 0 || pos >= tam)
+    {
+        return;
+    }
 
+    if (pos == 0)
+    {
+        // Quiero eliminar primera posicion
+        Curso* temp = primer;
+        primer = primer->siguiente;
+        delete temp;
+    }else
+    {
+        // Quiero eliminar otra que no sea la primera.
+        Curso* pAnt = nullptr;
+        Curso* pPivot = primer;
+
+        int cont = 0;
+        while(cont < pos)
+        {
+            pAnt = pPivot;
+            pPivot = pPivot->siguiente;
+            cont++;
+        }
+
+        pAnt->siguiente = pPivot->siguiente;
+        delete pPivot;
+    }
+    tam--;
 }
 
 Curso* ListaCursos::Obtener(size_t pos)
 {
+    if (pos >= tam)
+    {
+        return nullptr;
+    }
 
+    Curso* pPivot = primer;
+
+    int cont = 0;
+    while (cont < pos)
+    {
+        pPivot = pPivot->siguiente;
+        cont++;
+    }
+    return pPivot;
 }
 
 void ListaCursos::Print()

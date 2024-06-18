@@ -8,6 +8,11 @@ int main()
     cursos.Agregar("Redes");
     cursos.Agregar("Ope");
 
+    Curso* curso = cursos.Obtener(2);
+    curso->Print();
+
+    cursos.Eliminar(2);
+
     cursos.Print();
 
     return 0;
