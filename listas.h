@@ -16,6 +16,8 @@ public:
 
     size_t Longitud();
     void Agregar(std::string nombre);
+    void Eliminar(size_t pos);
+    Curso* Obtener(size_t pos);
     void Print();
 };
 

@@ -41,6 +41,17 @@ void ListaCursos::Agregar(std::string nombre)
     }
     tam++;
 }
+
+void ListaCursos::Eliminar(size_t pos)
+{
+
+}
+
+Curso* ListaCursos::Obtener(size_t pos)
+{
+
+}
+
 void ListaCursos::Print()
 {
     Curso* pPivot = primer;
