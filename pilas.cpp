@@ -112,6 +112,6 @@ void PilaArray::Pintar()
 {
     for (int i=0; i < tam; i++)
     {
-        arr[i].Pintar();
+        arr[tam - 1 - i].Pintar();
     }
 }

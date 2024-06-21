@@ -1,10 +1,7 @@
 #include "pilas.h"
 
-
-int main(int argc, char* argv[])
+void Test(Pila* p)
 {
-    Pila* pila1 = new PilaLE();
-
     Vector2* v1 = new Vector2();
     v1->x = 10;
     v1->y = 20;
@@ -13,13 +10,26 @@ int main(int argc, char* argv[])
     v2->x = 40;
     v2->y = 20;
 
-    pila1->Apilar(v1);
-    pila1->Apilar(v2);
-    pila1->Pintar();
+    p->Apilar(v1);
+    p->Apilar(v2);
+    p->Pintar();
     std::cout << "***********************" << std::endl;
-    auto v = pila1->Desapilar();
+    auto v = p->Desapilar();
     v->Pintar();
-    pila1->Pintar();
+    p->Pintar();
+}
+
+int main(int argc, char* argv[])
+{
+    Pila* pila1 = new PilaLE();
+    Pila* pila2 = new PilaArray();
+
+    std::cout << "PRUEBA CON LE" << std::endl;
+    Test(pila1);
+    std::cout << "PRUEBA CON ARRAYS" << std::endl;
+    Test(pila2);
+
+    
 
 
     /*std::string animal = argv[1];
