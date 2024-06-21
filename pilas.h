@@ -28,5 +28,8 @@ public:
 
 class PilaArray : public Pila
 {
-
+    Vector2* arr;
+public:
+    void Apilar(Vector2* v) override;
+    Vector2* Desapilar() override;
 };
