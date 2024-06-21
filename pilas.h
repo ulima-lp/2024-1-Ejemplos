@@ -6,6 +6,8 @@ public:
     int x;
     int y;
     Vector2* siguiente;
+
+    void Pintar();
 };
 
 class Pila
@@ -16,6 +18,7 @@ public:
     Pila();
     virtual void Apilar(Vector2* v) = 0; // abstractos
     virtual Vector2* Desapilar() = 0; // abstractos
+    virtual void Pintar() = 0; // abstractos
 };
 
 class PilaLE : public Pila
@@ -24,6 +27,7 @@ class PilaLE : public Pila
 public:
     void Apilar(Vector2* v) override;
     Vector2* Desapilar() override;
+    void Pintar() override;
 };
 
 class PilaArray : public Pila
@@ -32,4 +36,5 @@ class PilaArray : public Pila
 public:
     void Apilar(Vector2* v) override;
     Vector2* Desapilar() override;
+    void Pintar() override;
 };

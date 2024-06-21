@@ -1,14 +1,28 @@
-#include "listas.h"
-#include "polimorfismo.h"
+#include "pilas.h"
 
-void Init(Animal* animal)
-{
-    animal->HacerSonido();
-}
 
 int main(int argc, char* argv[])
 {
-    std::string animal = argv[1];
+    Pila* pila1 = new PilaLE();
+
+    Vector2* v1 = new Vector2();
+    v1->x = 10;
+    v1->y = 20;
+
+    Vector2* v2 = new Vector2();
+    v2->x = 40;
+    v2->y = 20;
+
+    pila1->Apilar(v1);
+    pila1->Apilar(v2);
+    pila1->Pintar();
+    std::cout << "***********************" << std::endl;
+    auto v = pila1->Desapilar();
+    v->Pintar();
+    pila1->Pintar();
+
+
+    /*std::string animal = argv[1];
     
     if (animal == "perro")
     {
@@ -22,7 +36,7 @@ int main(int argc, char* argv[])
         Init(&g1);
     }
     
-
+    */
     
 
     
